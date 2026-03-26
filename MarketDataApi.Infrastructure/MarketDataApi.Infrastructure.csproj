@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\MarketDataApi.Application\MarketDataApi.Application.csproj" />
+      <ProjectReference Include="..\MarketDataApi.Domain\MarketDataApi.Domain.csproj" />
+    </ItemGroup>
+
+</Project>

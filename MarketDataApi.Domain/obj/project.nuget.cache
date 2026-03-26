@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "ZSYee1MmCDU=",
+  "success": true,
+  "projectFilePath": "/Users/olegpona/MarketDataApi/MarketDataApi.Domain/MarketDataApi.Domain.csproj",
+  "expectedPackageFiles": [
+    "/Users/olegpona/.nuget/packages/microsoft.netcore.app.ref/9.0.13/microsoft.netcore.app.ref.9.0.13.nupkg.sha512",
+    "/Users/olegpona/.nuget/packages/microsoft.aspnetcore.app.ref/9.0.13/microsoft.aspnetcore.app.ref.9.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}
