@@ -1,4 +1,7 @@
+using MarketDataApi.Application.Interfaces;
+using MarketDataApi.Application.Services;
 using MarketDataApi.Infrastructure.Persistence;
+using MarketDataApi.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,8 +10,12 @@ builder.Services.AddOpenApi();
 
 // Add services to the container
 builder.Services.AddControllers();
+
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<IAssetRepository, AssetRepository>();
+builder.Services.AddScoped<IAssetService, AssetService>();
 
 // Swagger
 builder.Services.AddEndpointsApiExplorer();
