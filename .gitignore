@@ -1,0 +1,32 @@
+# Build
+bin/
+obj/
+
+# Rider / VS
+.idea/
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+
+# NuGet
+*.nupkg
+packages/
+
+# Environment
+.env
+
+# App settings (секрети)
+appsettings.Development.json
+appsettings.Local.json
+appsettings.*.local.json
+
+# Docker
+docker-compose.override.yml
