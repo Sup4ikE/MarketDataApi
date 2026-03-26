@@ -1,0 +1,29 @@
+version: '3.9'
+
+services:
+  api:
+    build: .
+    container_name: marketdata_api
+    ports:
+      - "5001:8080"
+    depends_on:
+      - db
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=marketdata;Username=postgres;Password=postgres
+
+  db:
+    image: postgres:15
+    container_name: marketdata_db
+    restart: always
+    environment:
+      POSTGRES_DB: marketdata
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
