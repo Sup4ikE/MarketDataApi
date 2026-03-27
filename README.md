@@ -102,6 +102,14 @@ Then open:
 http://localhost:5000/swagger
 ```
 
+### ⚠️ Local Run Notes
+
+For local execution, PostgreSQL must be running.
+
+You can either:
+- run database via Docker (`docker-compose up`)
+- or install PostgreSQL locally and update connection string
+
 ---
 
 ### 🐳 Run with Docker
