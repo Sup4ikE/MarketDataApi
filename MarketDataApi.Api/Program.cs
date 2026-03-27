@@ -1,5 +1,6 @@
 using MarketDataApi.Application.Interfaces;
 using MarketDataApi.Application.Services;
+using MarketDataApi.Application.Settings;
 using MarketDataApi.Infrastructure.Persistence;
 using MarketDataApi.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -14,8 +15,12 @@ builder.Services.AddControllers();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+builder.Services.Configure<FintachartsSettings>(
+    builder.Configuration.GetSection("Fintacharts"));
+
 builder.Services.AddScoped<IAssetRepository, AssetRepository>();
 builder.Services.AddScoped<IAssetService, AssetService>();
+builder.Services.AddScoped<IPriceService, PriceService>();
 
 // Swagger
 builder.Services.AddEndpointsApiExplorer();
